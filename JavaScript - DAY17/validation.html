@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function test() {
+            var input, span, star;
+            input = document.getElementById('input').value;
+            span = document.getElementById('span');
+            star = document.getElementById('star');
+            try {
+                if (input == "") throw "empty";
+                if (input < 5) throw "too low";
+                if (input > 10) throw "too high";
+                if (input <= 10 || input >= 5) throw "Perfect !";
+            } catch (err) {
+                span.innerHTML = "Input is " + err;
+            }
+            for (let i = 0; i <= input; i++) {
+                for (let j = input; j >= i; j--) {
+                    star.innerHTML = "\0";
+                }
+                for (let k = 0; k < i; k++) {
+                    star.innerHTML = i;
+                }
+                star.innerHTML = "<br>";
+            }
+            for (let i = input-1; i > 0; i--) {
+                for (let j = i; j < i; j++) {
+                    star.innerHTML =" <mark>|</mark>";
+                }
+                for (let k = i; k > 0; k--) {
+                    star.innerHTML = i;
+                }
+                star.innerHTML = "<br>";
+            }
+        }
+    </script>
+    <title>Validation</title>
+</head>
+
+<body>
+    <p><u>Please enter a number bertween 5 and 10=</u></p><input type="text" name="" id="input"
+        oninput="test()"><br><span id="span" style="color:red;font-size: 70%; text-align: center;"></span><br>
+    <div id="star"></div>
+</body>
+
+</html>

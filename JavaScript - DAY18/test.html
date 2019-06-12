@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        var str = "";
+        function add(t) {
+            alert(t);
+            document.getElementById('d').innerHTML = (str = str + "<input type='"+ t +"'><br>");
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="t"><option value="button">button</option><option value="text">TextBox</option><option value="radio">Radio</option></select> | <input type="button" value="+" onclick="add(t.value)"> | <input type="button" value="-" onclick="remove(type.value)"><br>
+    <div id='d'></div>
+</body>
+
+</html>

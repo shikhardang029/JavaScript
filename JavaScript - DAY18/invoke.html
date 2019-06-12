@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+    function invoke(obj,method,args) {
+        return obj[method].apply(this,args);
+    }
+    alert(invoke(Math,'min',[123,54,65,76,87,34,345]));
+    alert(invoke(console,'log',["hello"]));
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

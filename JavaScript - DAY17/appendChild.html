@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function add() {
+            var node = document.createElement("LI");
+            var ele = prompt("Enter the name of the new element=");
+            var textnode = document.createTextNode(ele);
+            node.appendChild(textnode);
+            document.getElementById("l").appendChild(node);
+        }
+    </script>
+    <title>appendChild</title>
+</head>
+
+<body>
+    <ul id="l">
+        <li>LTI</li>
+        <li>INFY</li>
+        <li>TechM</li>
+        <li>TCCS</li>
+    </ul>
+    <input type="button" value="Click me!" onclick="add()">
+</body>
+
+</html>

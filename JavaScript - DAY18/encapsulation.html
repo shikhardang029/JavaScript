@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function complex(real,imag) {
+            var real = real;
+            var imag = imag;
+
+            this.showDetails= function () {
+                alert("Real "+ real+" Imag "+imag);
+            }
+        }
+        var c1= new complex(10,20);
+        alert(c1.real);
+        alert(c1.imag);
+        c1.showDetails();
+    </script>
+    <title>encapsulation</title>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        /* Array */
+        /* var array=[10,20,30,40]; */
+
+
+
+        /* ForEach loop with array */
+        /* for(temp in array) {
+            document.writeln(temp);
+        } */
+
+
+
+        /* For */
+        /* for (let i = 0; i < array.length; i++) {
+            document.writeln(array[i]);
+        } */
+
+
+
+        /* Push and POP */
+        /* var arr2=new Array();
+        arr2.push("Rohan");
+        arr2.push("Brohan");
+        arr2.push("CrowBAR");
+
+        for(var i = 0; i<arr2.length; i++){
+            document.writeln(arr2[i]);
+        } */
+
+        /*         var array = new Array(5);
+                for (var i = 0; i < array.length; i++) {
+                    array[i] = parseInt(prompt("Enter a number ="))
+                }
+                for (var j = 0; j < array.length; j++) {
+                    document.write(array[i]);
+                } */
+
+        /*         var array = new Array();
+                for (let i = 0; i < 3; i++) {
+                    array[i] = new Array();
+                }
+                for (var i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        array[i][j] = parseInt(prompt("Enter a number ="));
+                    }
+                }
+                for (var i = 0; i < array.length; i++) {
+                    for (var j = 0; j < 3; j++) {
+                        document.write(" " + array[i][j]);
+                    }
+                    document.write("<br>");
+                } */
+
+
+        /* Find the Maximum and the Minimum Value */
+        var size = parseInt(prompt("Enter whats your size of the array"));
+        var array = new Array(size);
+
+        for (let i = 0; i < array.length; i++) {
+            array[i] = parseInt(prompt("Please enter the value ="));
+            document.write(array[i] + " ");
+        }
+        var choice = parseInt(prompt("1)Max\n2)Min\n3)Asc\n4)Des\n5)Sum of elements\n6)Reverse\n7)Add a element in the array\n\nEnter a choice"));
+        switch (choice) {
+            case 1:
+                var max = array[0];
+                for (let i = 0; i < array.length; i++) {
+                    if (max < array[i]) {
+                        max = array[i];
+                    }
+                    document.write(+"Maximum value is " + max);
+                }
+                break;
+            case 2:
+                var min = array[0];
+                for (let i = 0; i < array.length; i++) {
+                    if (min > array[i]) {
+                        min = array[i];
+                    }
+                }
+                document.write("Minimum value is " + min);
+                break;
+            case 3:
+                var clonearray = array.slice();
+                document.write("------------------------");
+                document.write("Array in Ascending order");
+                for (let i = 0; i < clonearray.length; i++) {
+                    for (let j = 0; j < clonearray.length; j++) {
+                        if (clonearray[i] < clonearray[j]) {
+                            var temp = clonearray[i];
+                            clonearray[i] = clonearray[j];
+                            clonearray[j] = temp;
+                        }
+
+                    }
+                }
+                for (let index = 0; index < array.length; index++) {
+                    document.write(" " + clonearray[index]);
+
+                }
+                break;
+            case 4:
+                var descarray = array.slice();
+                document.write("------------------------");
+                document.write("\n\nArray in Descending order");
+                for (let i = 0; i < descarray.length; i++) {
+                    for (let j = 0; j < descarray.length; j++) {
+                        if (descarray[i] > descarray[j]) {
+                            var temp = descarray[i];
+                            descarray[i] = descarray[j];
+                            descarray[j] = temp;
+                        }
+
+                    }
+                }
+                for (let index = 0; index < array.length; index++) {
+                    document.write(" " + descarray[index]);
+
+                }
+                break;
+            case 5:
+                var sum = 0
+                for (let i = 0; i < array.length; i++) {
+                    sum += array[i];
+                }
+                document.write("Sum of the array is " + sum);
+                break;
+            case 6:
+                document.write("Reverse of the array is ");
+                for (let i = array.length; i > 0; i--) {
+                    document.write(" " + array[i]);
+                }
+                break;
+/*             case 7:
+                var a = array.slice();
+                var element = parseInt(prompt("Enter the element you need to add the array="));
+                var pos = parseInt(prompt("Enter the position where you need to add the element="));
+                a.push(a[-1]);
+                for (let i = pos-1; i < a.length; i++) {
+                        var temp = a[i];
+                        a[i] = a[i+1];
+                        a[i+1] = temp;
+                }
+                a[pos-1] = element;
+                document.write(a);
+                break; */
+            default:
+                alert("Enter the right choice!")
+        }
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

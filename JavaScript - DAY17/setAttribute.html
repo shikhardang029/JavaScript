@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function show() {
+            var node = document.getElementsByTagName('li');
+            var element = prompt("Enter the element you want to search=");
+            for (let index = 0; index < node.length; index++) {
+                if (node[index].innerHTML == element) {
+                    node[index].setAttribute("style", "background-color: red;");
+                }
+                
+            }
+        }
+    </script>
+    <title>setAttribute</title>
+</head>
+<body>
+    <ul>
+        <li>LTI</li>
+        <li>INFY</li>
+        <li>TechM</li>
+        <li>TCCS</li>
+    </ul>
+    <input type="button" value="Click me!" onclick="show()">
+</body>
+</html>

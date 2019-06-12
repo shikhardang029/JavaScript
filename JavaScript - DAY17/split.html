@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function mark() {
+            var temp= document.getElementsByTagName('p')[0].innerText;
+            var searchKeyword = prompt("Please enter the search keyword = ");
+            var res = temp.replace(searchKeyword,"<mark>"+searchKeyword+"</mark>");
+            document.getElementsByTagName("p")[0].innerHTML = res;
+        }
+    </script>
+    <title>Split</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, perferendis sapiente est a iusto repellat cumque dolorum, aliquid voluptate vel unde et doloribus numquam iste voluptates magni laboriosam praesentium officia.</p>
+    <input type="button" value="Mark it for me" onclick="mark()">
+</body>
+</html>

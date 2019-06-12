@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function find() {
+            var temp= document.getElementsByTagName('p')[0].innerText;
+            var searchKeyword = prompt("Please enter the search keyword = ");
+            var re = new RegExp(searchKeyword,"g");
+            var res = temp.replace(re,"<mark>"+searchKeyword+"</mark>");
+            document.getElementsByTagName("p")[0].innerHTML = res;
+        }
+        function replaceAll() {
+            var temp= document.getElementsByTagName('p')[0].innerText;
+            var searchKeyword = prompt("Please enter the search keyword = ");
+            var replaceKeyword = prompt("Please enter the keyword you want to replace all occurances with = ");
+            var re = new RegExp(searchKeyword,"g");
+            var res = temp.replace(re,"<mark>"+replaceKeyword+"</mark>");
+            document.getElementsByTagName("p")[0].innerHTML = res;
+        }
+        function replace() {
+            var temp= document.getElementsByTagName('p')[0].innerText;
+            var searchKeyword = prompt("Please enter the search keyword = ");
+            var replaceKeyword = prompt("Please enter the keyword you want to replace with = ");
+            var re = new RegExp(searchKeyword);
+            var res = temp.replace(re,"<mark>"+replaceKeyword+"</mark>");
+            document.getElementsByTagName("p")[0].innerHTML = res;
+        }
+    </script>
+    <title>Split</title>
+</head>
+<body>
+    <p rows="10" cols="150">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, perferendis sapiente est a iusto repellat cumque dolorum, aliquid voluptate vel unde et doloribus numquam iste voluptates magni laboriosam praesentium officia.</p>
+    <div><a value="find" onclick="find()">find</a>  <a value="replace" onclick="replace()">replace</a> <a value="replaceAll" onclick="replaceAll()">replaceAll</a> </div>
+</body>
+</html>

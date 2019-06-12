@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exception Handling</title>
+    <script>
+        try {
+            var temp = JSON.parse('{"age":29}'); //error Line
+            if (!temp.name) {
+                throw new SyntaxError("Incorrect name key");
+            }
+        } catch (err) {
+            alert(err.message);
+            alert(err.name);
+            alert(err.stack);
+        }
+        finally {
+            var bool = confirm("Do you wanna continue ?");
+            if (bool) {
+                window.close();
+            }
+        }
+        /* try {
+            var temp = JSON.parse('{te er}'); //error Line
+        } catch (err) {
+            alert(err.message);
+            alert(err.name);
+            alert(err.stack);
+            alert(err);
+        }
+        finally {
+            confirm("Do you wanna continue ?");
+            if (true) {
+                window.close();
+            }
+        } */
+        /* try {
+            temp //error Line
+        } catch (err) {
+            alert(err.message);
+            alert(err.name);
+            alert(err.stack);
+            alert(err);
+        }
+        finally {
+            confirm("Do you wanna continue ?");
+        } */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

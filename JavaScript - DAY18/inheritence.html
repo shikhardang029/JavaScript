@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function base() {
+            this.showBaseDetails = function(){
+                alert("showBaseDetails is called from base");
+            }
+        }
+
+        function derived() {
+            this.showDerivedDetails = function(){
+                alert("showDerivedDetails is called from derived");
+            }
+        }
+
+        derived.prototype=new base();
+        var d1 = new derived();
+        d1.showDerivedDetails();
+        d1.showBaseDetails();
+    </script>
+    <title>Inheritence</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

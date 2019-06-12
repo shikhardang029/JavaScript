@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var array = new Array();
+        function Employee(id, name, salary) {
+            var arr = new Array();
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+            arr.push(this.id);
+            arr.push(this.name);
+            arr.push(this.salary);
+            this.addDetails = function () {
+                alert(arr[0] + " " + arr[1] + " " + arr[2]);
+                return arr;
+            }
+        }
+        /*
+          -- ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── I ──────────
+          --   :::::: I M P L E M E N T A T I O N   O F   P R O T O T Y P E   T O   A C C E S S   T H E   F U N C T I O N   O U T S I D E   T H E   C O N S T R U C T O R   U S I N G   P R O T O T Y P E : :  :   :    :     :        :          :
+          -- ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+          -->
+        */
+
+
+        /* Employee.prototype.getEmpId=function() {
+            return this.id;
+        }
+        Employee.prototype.getEmpName=function() {
+            return this.name;
+        }
+        Employee.prototype.getEmpSalary=function() {
+            return this.salary;
+        } */
+
+        function add() {
+            var inputid = document.getElementById('id').value;
+            var inputname = document.getElementById('name').value;
+            var inputsalary = document.getElementById('salary').value;
+            var emp = new Employee(inputid, inputname, inputsalary);
+            array.push(emp.addDetails());
+            alert("Values has been added to the table !");
+        }
+        function display() {
+            var str = "";
+            str = "<table>";
+            for (let index = 0; index < array.length; index++) {
+                str = str + "<tr><td>" + array[index][0] + "</td><td>" + array[index][1] + "</td><td>" + array[index][2] + "</td></tr>"
+                alert(array[index][0] + " " + array[index][1] + " " + array[index][2]);
+            }
+            str = str + "</table>";
+            document.getElementById('tab').innerHTML = str;
+        }
+    </script>
+    <title>Constructor</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Employee Details</legend>
+        <table border=2px>
+            <tr>
+                <td>Employee Id</td>
+                <td><input type="number" name="id" id="id"></td>
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Employee Salary</td>
+                <td><input type="number" name="salary" id="salary"></td>
+            </tr>
+            <tr align="center">
+                <td><input type="button" value="Add" onclick="add()"></td>
+                <td><input type="button" value="Display" onclick="display()"></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Displaying table</legend>
+        <div id='tab'>
+        </div>
+    </fieldset>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        var rows = parseInt(prompt("Enter the number of rows"));
+        var cols = parseInt(prompt("Enter the number of cols"));
+        document.write("<table border='1'");
+        for (let row = 1; row <= rows; row++) {
+            document.write("<tr>");
+            for (let col = 1; col <= cols; col++) {
+            document.write("<td>");
+                document.write(parseInt(row)*parseInt(col));
+            document.write("</td>");
+            }
+            document.write("<tr>");
+        }
+        document.write("</table");
+    </script>
+    </head>
+<body>
+    
+</body>
+</html>

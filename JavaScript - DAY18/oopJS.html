@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        /*
+        -- ────────────────────────────────────────────────────────────────────────────────────────
+        --   :::::: C O N S T R U C T O R   V E R S I O N: :  :   :    :     :        :          :
+        -- ────────────────────────────────────────────────────────────────────────────────────────
+        */
+
+        
+        function Complex(real,imagin) {
+            this.real = real,
+            this.imagin = imagin,
+            this.showDetails = function () {
+                alert(" Real " + this.real + " Imagin " + this.imagin);
+            }
+        }
+        var com = new Complex();
+        
+        var e1 = new Complex(30,40);
+        e1.showDetails();
+        var e2 = new Complex(50,60);
+        e2.showDetails();
+
+
+        var arr = new Array();
+        arr.push(new Complex(70,80));
+        arr.push(new Complex(90,100));
+        arr.push(new Complex(110,120));
+        arr.push(new Complex(130,140));
+        arr.push(new Complex(150,160));
+
+        for (let index = 0; index < arr.length; index++) {
+            console.log(arr[index].showDetails());
+            
+        }
+        /*
+          -- ────────────────────────────────────────────────────────────────────────────────
+          --   :::::: L I T E R A L   V E R S I O N : :  :   :    :     :        :          :
+          -- ────────────────────────────────────────────────────────────────────────────────
+          */
+
+        
+/*         var complex = {
+            real: 10,
+            imagin: 20,
+            showDetails: function () {
+                alert(" Real " + complex.real + " Imagin " + complex.imagin);
+            }
+        }
+        complex.showDetails(); */
+
+        /* Example of class in JavaScript */
+        /* function complex() {
+
+        }
+        var complex = new complex(); */
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

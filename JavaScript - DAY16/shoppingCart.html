@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function checkMe(status) {
+        if (status) {
+            document.getElementsByClassName('input').disabled=false;
+        }
+        else {
+            document.getElementByClassName('input').disabled=true;
+        }
+    }
+    function total() {
+        var sum = 0;
+        var x1 = document.getElementById("c1").checked;
+        var x2 = document.getElementById("c2").checked;
+        var x3 = document.getElementById("c3").checked;
+        var x4 = document.getElementById("c4").checked;
+        if (x1) {
+            var q1 = parseInt(document.getElementById('qty1').value);
+            var p1 = parseInt(document.getElementById('price1').innerText);
+            sum = sum + (q1 * p1);
+            document.getElementById('t1').value = sum;
+        }
+        if (x2) {
+            var q2 = parseInt(document.getElementById('qty2').value);
+            var p2 = parseInt(document.getElementById('price2').innerText);
+            sum = sum + (q2 * p2);
+            document.getElementById('t1').value = sum;
+        }
+        if (x3) {
+            var q3 = parseInt(document.getElementById('qty3').value);
+            var p3 = parseInt(document.getElementById('price3').innerText);
+            sum = sum + (q3 * p3);
+            document.getElementById('t1').value = sum;
+        }
+        if (x4) {
+            var q4 = parseInt(document.getElementById('qty4').value);
+            var p4 = parseInt(document.getElementById('price4').innerText);
+            sum = sum + (q4 * p4);
+            document.getElementById('t1').value = sum;
+        }
+    }
+</script>
+
+<body>
+    <fieldset style="width: fit-content;">
+        <legend>Shopping Cart</legend>
+        <table border="2px">
+            <thead>
+                <th>
+                <td>Item</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="" id="c1" onclick="checkMe(this.checked)"></td>
+                    <td>Item1</td>
+                    <td id="price1">784</td>
+                    <td><input type="number" name="" id="qty1" class="input" disabled="true" oninput="total()"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id="c2" onclick="checkMe(this.checked)"></td>
+                    <td>Item2</td>
+                    <td id="price2">231</td>
+                    <td><input type="number" name="" id="qty2" class="input" disabled="true" oninput="total()"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id="c3" onclick="checkMe(this.checked)"></td>
+                    <td>Item3</td>
+                    <td id="price3">956</td>
+                    <td><input type="number" name="" id="qty3" class="input" disabled="true" oninput="total()"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id="c4" onclick="checkMe(this.checked)"></td>
+                    <td>Item4</td>
+                    <td id="price4">4532</td>
+                    <td><input type="number" name="" id="qty4" class="input" disabled="true" oninput="total()"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><input type="button" value="Total"></td>
+                    <td><input type="number" name="" id='t1'></td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+</body>
+
+</html>

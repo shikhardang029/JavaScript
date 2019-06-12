@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function Person(empid,name) {
+            this.name=name;
+            this.empid=empid;
+
+            this.showPersonDetails=function() {
+                alert("person details "+this.empid+" "+this.name);
+            }
+        }
+        function Employee(empId,name,salary) {
+            Person.call(this,empId,name);
+            this.salary=salary;
+
+            this.showEmployeeDetails=function() {
+                this.showPersonDetails();
+                alert("emp id"+this.empid);
+                alert("Employee details "+this.salary);
+            }
+        }
+        var s1=new Employee(101,"Eshan",10000);
+        s1.showEmployeeDetails();
+        s1.showPersonDetails();
+    </script>
+    <title>Inheritence 3</title>
+</head>
+<body>
+    
+</body>
+</html>
