@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function calculate() {
+            var first = document.getElementById('first').value;
+            firstDate = first.split('-');
+            var second = document.getElementById('second').value;
+            secondDate = second.split('-');
+            if (firstDate[0] <= secondDate[0]) {
+                if (firstDate[1] <= secondDate[1]) {
+                    if (firstDate[2] <= secondDate[2]) {
+                        var str = "";
+                        var diffDays = (secondDate[2] - firstDate[2]);
+                        var diffMonth = (secondDate[1] - firstDate[1]);
+                        var diffYears = (secondDate[0] - firstDate[0]);
+                        var days = diffDays + (diffMonth * 30) + (diffYears * 365);
+                        str = str + (diffDays + " days" + diffMonth + " months" + diffYears + " years" + " and " + days + " days!");
+                        document.getElementById('d').innerHTML =  str;
+                    } else {
+                        alert("Enter the correct date !");
+                        document.getElementById('first').value = "";
+                        document.getElementById('second').value = "";
+                    }
+                }
+                else {
+                    alert("Enter the correct date !");
+                    document.getElementById('first').value = "";
+                    document.getElementById('second').value = "";
+                }
+            }
+            else {
+                alert("Enter the correct date !");
+                document.getElementById('first').value = "";
+                document.getElementById('second').value = "";
+            }
+        }
+    </script>
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    Enter the first date = <input type="date" name="first" id="first"><br>
+    Enter the second date = <input type="date" name="second" id="second"> <br>
+    <input type="button" value="calculate" onclick="calculate()">
+    <br>
+    <div id="d" style="font-size: 10px; color: red;"></div>
+</body>
+
+</html>

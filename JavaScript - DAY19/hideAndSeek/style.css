@@ -1,0 +1,11 @@
+html, body {
+  margin: 0;
+  background: black;
+}
+
+img {
+  position: absolute;
+  top: 11 vh;
+  left: 11 vw;
+}
+/*# sourceMappingURL=style.css.map */

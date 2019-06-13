@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+        <script>
+            var count=0
+    function found(){
+                alert(++count);
+            }
+            var nyan = document.getElementById("nyan");
+            var browserWidth = window.innerWidth || document.documentElement.clientWidth;
+            var browserHeight = window.innerHeight || document.documentElement.clientHeight;
+            var nyanWidth = nyan.offsetWidth;
+            var nyanHeight = nyan.offsetHeight;
+    function move() {
+                nyan.style.left = Math.floor(Math.random() * (browserWidth - nyanWidth)) + "px";
+            nyan.style.top = Math.floor(Math.random()*(browserHeight-nyanHeight)) + "px";
+        }
+    if(typeof addEventListener !== "undefined") {
+                nyan.addEventListener("mouseover", move, false);
+            } else if (typeof attachEvent !== "undefined") {
+                nyan.attachEvent("onmouseover", move);
+            } else {
+                nyan.onmousover = move;
+    }
+            </script>
+    <title>Hide and Seek</title>
+</head>
+
+<body>
+    <a href="#" id="nyan"><img src="nyan.gif" alt="" ></a>
+</body>
+
+</html>

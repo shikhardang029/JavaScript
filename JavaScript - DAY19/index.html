@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="pata.json"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='d1'></div>
+    <script>
+        var temp = JSON.parse(pata);
+        var str = "";
+        str = str + "<table border='3px'>";
+        /*alert(temp.firstName);*/
+        for (i in temp) {
+            if (typeof (temp[i]) == "object") {
+                for (j in temp[i]) {
+                    if (typeof (temp[i][j]) == "object") {
+                        str = str + "<tr>";
+                        for (test in temp[i][j]) {
+                            str = str + "<tr><td>" + test + "</td><td>" + temp[i][j][test] + "</td></tr>";
+                        }
+                        str = str + "</tr>";
+                    }
+                    else {
+                        str = str + "<tr>";
+                        str = str + "<td>" + i + "</td><td>" + temp[i][j] + "</td>";
+                        str = str + "</tr>";
+                    }
+                }
+            }
+            else {
+                str = str + "<td>" + i + "</td><td>" + temp[i] + "</td></tr>";
+            }
+            alert(i +" : "+ temp[i]);
+        }
+        str = str + "</table>";
+        document.getElementById('d1').innerHTML = str;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900&display=swap");
+@mixin center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  font-family: "Orbitron";
+}
+html,
+body {
+  background: black;
+}
+div {
+    @include center;
+  span {
+    color: aqua;
+    font-size: 5rem;
+    font-weight: 500;
+  }
+}
+p {
+    @include center;
+    top: 55%;
+    color: grey;
+    font-size: 1rem;
+    font-weight: 400;
+    align-content: center;
+    letter-spacing: 0.3em;
+  }
