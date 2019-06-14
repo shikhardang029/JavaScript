@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+    <style>
+        html,
+        body,
+        pre,
+        code,
+        kbd,
+        samp {
+            display: flexbox;
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var greenCounter = 0;
+            var redCounter = 0;
+            var blueCounter = 0;
+            /*             $('#reset').on(click(), function () {
+                            
+                        }); */
+            $('#generate').on('click', function () {
+                let height = $('#playground').height();
+                let width = $('#playground').width();
+                var rand = Math.floor((Math.random() * 10) + 1);
+                for (let index = 0; index < rand; index++) {
+                    var randomHeight = Math.floor((Math.random() * height) + 1);
+                    var randomWidth = Math.floor((Math.random() * width / 3) + 1);
+                    $('#playground').append("<button class='nes-btn is-success green' style='top:" + randomHeight + "px; left:" + randomWidth + "px'>");
+                }
+
+                /*                 for (let index = 0; index < 20; index++) {
+                                    let height = $('#playground').height();
+                                    let width = $('#playground').width();
+                                    var rand = Math.floor((Math.random() * 10) + 1);
+                                    var randomHeight = Math.floor((Math.random() * (height/2)) + 1);
+                                    var randomWidth = Math.floor((Math.random() * width / 3) + 1);
+                                    $('#playground').append("<button class='nes-btn is-error red' style='top:" + randomHeight + "px; left:" + randomWidth + "px'>");
+                                    $('.red').click(function (e) {
+                                        $(this).hide();
+                                        $(this).redCounter += 1;
+                                        $('#redSpan').text(redCounter);
+                                    });
+                                }
+                                for (let index = 0; index < 10; index++) {
+                                    let randomWidth = 0;
+                                    let height = $('#playground').height();
+                                    let width = $('#playground').width();
+                                    var rand = Math.floor((Math.random() * 10) + 1);
+                                    var randomHeight = Math.floor((Math.random() * height) + 1);
+                                    randomWidth = Math.floor((Math.random() * width) + 1);
+                                    $('#playground').append("<button class='nes-btn is-primary blue' style='top:" + randomHeight + "px; left:" + randomWidth + "px'>");
+                                    $('.blue').click(function (e) {
+                                        $(this).hide();
+                                        $(this).blueCounter += 1;
+                                        $('#blueSpan').text(blueCounter);
+                                    });
+                                } */
+
+                /*                 $('#playground').html("<button class='nes-btn is-primary blue' style='top:" + randomHeight + "px; left:" + randomWidth + "px'>");
+                                $('#playground').html("<button class='nes-btn is-error red' style='top:" + randomHeight + "px; left:" + randomWidth + "px'>"); */
+            });
+
+
+            $('.green').click(function (e) {
+                $(this).hide();
+                greenCounter += 1;
+                $('#greenSpan').text(greenCounter);
+            });
+        });
+    </script>
+    <title>Wack A Mole</title>
+</head>
+
+<body>
+    <div class="nes-container with-title" style="width: 30%; margin:1% 0 0 1%;" id="score">
+        <h3 class="title" id="s1">Score</h3>
+        <div id="f1">
+            <div class="nes-field">
+                <label for="name_field">Red = <span id="redSpan">0</span></label>
+            </div>
+            <div class="nes-field">
+                <label for="password_field">Green = <span id="greenSpan">0</span></label>
+            </div>
+            <div class="nes-field">
+                <label for="password_field">Blue = <span id="blueSpan">0</span></label>
+            </div>
+            <a class="nes-btn" id='generate'>Generate</a> | <a class="nes-btn" id='reset'>Reset</a>
+        </div>
+    </div>
+    <div class="nes-container with-title" id='playground' style="width: 98%; margin:2% 1%; height: calc(57vh)">
+
+    </div>
+</body>
+
+</html>

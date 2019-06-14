@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+    <style>
+        html,
+        body,
+        pre,
+        code,
+        kbd,
+        samp {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#f1").hide();
+            $("#s1").click(function () {
+                $("#f1").slideToggle();
+            });
+        });
+    </script>
+    <title>addElements</title>
+</head>
+
+<body>
+    <div class="nes-container with-title" >
+        <h3 class="title" id="s1">Sign In</h3>
+        <div id="f1">
+            <div class="nes-field">
+                <label for="name_field">Enter username =</label>
+                <input type="text" id="name_field" class="nes-input">
+            </div>
+            <div class="nes-field">
+                <label for="password_field">Enter password =</label>
+                    <input type="password" id="password_field" class="nes-input">
+            </div>
+            <button type="button" id="b1" class="nes-btn is-primary">Sign In</button>
+        </div>
+    </div>
+</body>
+
+</html>

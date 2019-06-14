@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+    <style>
+        html,
+        body,
+        pre,
+        code,
+        kbd,
+        samp {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $("span").css("display","inline").fadeOut(2000);
+            });
+        });
+    </script>
+    <title>addElements</title>
+</head>
+
+<body>
+    <div class="nes-field">
+        <label for="name_field">Your name</label>
+        <input type="text" id="name_field" class="nes-input">
+        <span>Can i have your phone number!</span>
+    </div>
+</body>
+
+</html>
